@@ -6,7 +6,7 @@ const uid2 = require('uid2');
 const User = require('../models/User');
 
 router.post('/signup', (req, res) => {
-  if (!req.body.username || !req.body.email || !req.body.password) {
+  if (!req.body.username || !req.body.firstname || !req.body.password) {
     res.json({ result: false, error: 'Missing or empty fields' });
     return;
   }
@@ -22,7 +22,7 @@ router.post('/signup', (req, res) => {
 
     const newUser = new User({
       username: req.body.username,
-      email: req.body.email,
+      firstname: req.body.firstname,
       password: hash,
       token: token,
     });
