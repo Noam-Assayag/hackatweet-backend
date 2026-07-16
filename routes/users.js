@@ -32,6 +32,7 @@ router.post('/signup', (req, res) => {
         result: true,
         token: newDoc.token,
         username: newDoc.username,
+        _id: newDoc._id,
       });
     });
   });
@@ -53,6 +54,7 @@ router.post('/signin', (req, res) => {
       result: true,
       token: data.token,
       username: data.username,
+      _id: data._id,
     });
   });
 });
